@@ -1,1 +1,57 @@
+Project Title: Twitter Customer Support Classification using Deep Learning
+
+Dataset Information
+•	Dataset Name: Customer Support on Twitter
+•	Source: Kaggle
+•	Dataset Link:
+https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter
+The dataset contains Twitter conversations between customers and company support handles across various brands. It includes both customer-generated queries and official support responses.
+
+Dataset Size and Sampling Strategy
+The complete Customer Support on Twitter dataset consists of approximately 2,700,000 tweets, making it a large-scale dataset suitable for big data processing environments.
+However, due to system and memory constraints on a personal machine, processing the full dataset was not practical for this project. To address this limitation, a controlled data sampling approach was used.
+•	100,000 tweets were selected for model training
+•	25,000 tweets were reserved for validation and cross-checking model performance
+This sampling strategy ensures that the models are trained on a sufficiently large and diverse dataset while keeping computational requirements manageable. The validation dataset helps verify whether the trained model generalizes well to unseen data.
+
+Objective of the Dataset
+The primary objective of the dataset is to analyze and classify Twitter messages related to customer support in order to identify inbound customer queries and distinguish them from outbound support responses.
+
+Column Description (Original Dataset)
+The original dataset contains multiple columns related to tweet metadata and conversation threads. However, not all columns are required for text classification.
+
+Columns Used in This Project
+Only the following two columns were selected for modeling:
+1.	text
+o	Description: Contains the actual tweet content.
+o	Usage: Used as the input feature for natural language processing and deep learning models.
+2.	inbound
+o	Description: Indicates whether the tweet is an inbound customer message or an outbound support response.
+o	Values:
+	1 → Inbound customer query
+	0 → Outbound company/support reply
+o	Usage: Used as the target variable for binary classification.
+
+Data Preprocessing Summary
+•	Removal of unnecessary columns
+•	Text cleaning (lowercasing, removal of URLs, special characters, and extra spaces)
+•	Tokenization and padding for deep learning models
+•	Conversion of target labels into binary format
+
+Project Scope
+This project focuses on building and comparing multiple machine learning and deep learning models to classify Twitter customer support messages. The final selected model is deployed as a web application using Streamlit.
+
+Models Implemented
+•	Logistic Regression
+•	Simple Recurrent Neural Network (RNN)
+•	Long Short-Term Memory (LSTM)
+•	Gated Recurrent Unit (GRU)
+The GRU model achieved the best performance and was selected for deployment.
+
+Deployment
+The trained GRU model is deployed using Streamlit to allow real-time prediction of tweet type based on user input.
+
+Conclusion
+This dataset provides a real-world use case for natural language processing and deep learning in customer support automation. By using only the relevant text and label columns, the project efficiently demonstrates end-to-end model development and deployment.
+
 
